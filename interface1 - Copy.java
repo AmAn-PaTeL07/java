@@ -17,7 +17,7 @@ class Employee implements info {
         return name;
     }
 
-    @Override65
+    @Override
     public int age() {
         System.out.println("Enter Age:");
         age = sc.nextInt();
