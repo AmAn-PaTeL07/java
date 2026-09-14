@@ -8,5 +8,7 @@ class A {
 
 public class localnglobal {
     public static void main(String[] arr) {
-        A c = new A(100);    }
+        A cs = new A(100);   
+        cs.A(100); // This line is incorrect and will cause a compilation error because the constructor cannot be called like a method. 
+     }
 }
