@@ -12,13 +12,13 @@ public class binarysearch {
         System.out.println("Enter the element to search: ");
         int key = sc.nextInt();
         int mid = l/2;
-        boolean found = false;
+        int c = 0;
 
         if (key >= arr[mid]) {
             for (int i = mid; i < l; i++) {
                 if (arr[i] == key) {
                     mid = i;
-                    found = true;
+                    c = 1;
                     break;
                 }
             }
@@ -26,18 +26,16 @@ public class binarysearch {
             for (int i = 0; i < mid; i++) {
                 if (arr[i] == key) {
                     mid = i;
-                    found = true;
+                    c = 1;
                     break;
                 }
             }
         }
 
-        if (found) {
+        if (c == 1 ) {
             System.out.println("Element found at index: " + mid);
         } else {
             System.out.println("Element not found");
         }
     }
     }
-    
-}
