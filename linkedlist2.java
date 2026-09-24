@@ -1,64 +1,25 @@
 public class linkedlist2 {
 
     static node head;
-
-    static class node {
-        int data;
-        node next;
-
-        node(int data) {
-            this.data = data;
-            this.next = null;
-        }
-    }
-
-    // Insert at the end
-    void insert(int data) {
+    void insertatstart(int data) {
         node newnode = new node(data);
-
         if (head == null) {
             head = newnode;
         } else {
-            node temp = head;
-
-            while (temp.next != null) {
-                temp = temp.next;
-            }
-
-            temp.next = newnode;
+            newnode.next = head;
+            head = newnode;
         }
-    }
-
-    // Display the linked list
-    void display() {
+    void insert(int data) {
+        node newnode = new node(data);
         if (head == null) {
-            System.out.println("List is empty");
+            head = newnode;
         } else {
-            node temp = head;
-
-            System.out.print("Linked List: ");
-
-            while (temp != null) {
-                System.out.print(temp.data + "->");
-                temp = temp.next;
+            node current = head;
+            while (current.next != null) {
+                current = current.next;
             }
-
-            System.out.println("null");
+            current.next = newnode;
         }
     }
 
-    // Main method
-    public static void main(String[] args) {
-
-        linkedlist2 ob = new linkedlist2();
-
-        ob.insert(10);
-        ob.display();
-
-        ob.insert(20);
-        ob.display();
-
-        ob.insert(30);
-        ob.display();
-    }
-}
+    
